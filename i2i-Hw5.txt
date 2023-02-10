@@ -1,0 +1,42 @@
+#!/bin/bash
+
+echo "Input calculation operand (+, -, *, /, %, !):"
+read op
+
+
+if [ $op == "!" ]; then
+echo "Input number"
+read num
+else
+echo "Input number1"
+read num1
+echo "Input number2"
+read num2
+fi
+
+fact=1
+
+
+if [ $op == "+" ]; then
+	echo "Result : " $((num1 + num2))
+elif [ $op == "-" ]; then
+	echo "Result : " $((num1 - num2))
+elif [ $op == "*" ]; then
+	echo "Result : " $((num1 * num2))
+elif [ $op == "/" ]; then
+	echo "Result : " $((num1 / num2))
+elif [ $op == "%" ]; then
+	echo "Result : " $((num1%num2))
+else
+echo "Invalid operator"
+# -gt is used for '>' Greater than sign
+while [ $num -gt 1 ]  
+do
+  fact=$((fact * num))  
+  num=$((num - 1))     
+done
+
+# Printing the value of the factorial
+echo $fact
+
+fi
